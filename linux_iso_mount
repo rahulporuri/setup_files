@@ -1,0 +1,2 @@
+sudo mkdir -p /mnt/disk
+sudo mount -o loop foo.iso /mnt/disk

@@ -1,0 +1,4 @@
+sudo export http_proxy=http://ph09b011:PH09b011%40iitm@hproxy.iitm.ac.in:3128
+sudo export https_proxy=http://ph09b011:PH09b011%40iitm@hproxy.iitm.ac.in:3128
+sudo export ftp_proxy=http://ph09b011:PH09b011%40iitm@hproxy.iitm.ac.in:3128
+sudo export socks_proxy=http://ph09b011:PH09b011%40iitm@hproxy.iitm.ac.in:3128
