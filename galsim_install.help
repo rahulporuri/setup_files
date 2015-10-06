@@ -1,0 +1,9 @@
+https://github.com/GalSim-developers/GalSim/blob/releases/1.2/INSTALL.md
+http://www.boost.org/users/history/version_1_57_0.html
+you could also use the command line and install libboost-all-dev
+https://coderwall.com/p/0atfug/installing-boost-1-55-from-source-on-ubuntu-12-04
+https://code.google.com/p/tmv-cpp/wiki/Installation
+http://www.fftw.org/fftw3_doc/Installation-on-Unix.html#Installation-on-Unix
+http://www.scons.org/doc/production/HTML/scons-user.html
+
+/usr/local was the install dir for TMV_DIR

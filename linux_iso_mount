@@ -1,2 +1,6 @@
+refer to --
+https://help.ubuntu.com/community/MountIso
+
 sudo mkdir -p /mnt/disk
 sudo mount -o loop foo.iso /mnt/disk
+sudo umount /mnt/disk

@@ -1,0 +1,106 @@
+C-left and C-right to jump between arguments
+C-A and C-E to move to the beginning and the end.
+C-U to clear the entire line
+C-R to search the command history for the most recent use of a command
+
+sudo !!
+!cat:p prints the most recent use of the cat command and
+!cat will run it
+
+cmd1 arg
+cmd !$ where !$ is the argument from the previous command
+
+if there's a mis-spelling in the commands, do
+^mistake^correction to redo the previous command after correction.
+
+sudo cp /path/to/file.{txt,dat} and
+sudo cp /etc/rc.conf{,-old} 
+
+refer to - http://lifehacker.com/5743814/become-a-command-line-ninja-with-these-time-saving-shortcuts
+
+for f in *.txt; do echo $f; done
+for file in dir/*; do echo $file; done
+
+ps aux - to list all the processes
+or top or htop
+
+refer to - http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything
+
+history | awk '{print $2}' | awk 'BEGIN {FS="|"}{print $1}' | sort | uniq -c | sort -n | tail | sort -nr
+can be used to get the ten most commonly used commands
+
+clear
+echo -e "Lifehacker, the Productivity and Software Guide"
+echo -e ""
+echo -ne "Today is "; date
+echo -e ""; cal ;
+echo -ne "Uptime:";uptime | awk /'up/{print $3,$4}'
+
+is an example to customize the first message.
+refer to - http://lifehacker.com/274317/turbocharge-your-terminal
+
+tar -xf file.tar.bz2
+cd dir
+./configure
+make
+sudo make install
+
+to install from a .tar.gz or a .tar.bz2 file
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text
+
+to install sublime text
+
+export HTTP_PROXY=http://address:port
+to set proxy from the terminal or 
+sudo http_proxy=http://address:port apt-get update
+to be used with a specific command or add
+Acquire::http::proxy "http://address:port/"
+needs to be added to /etc/apt/apt.conf
+
+to change the source of software updates -- 
+
+deb http://ftp.iitm.ac.in/ubuntu/ trusty main restricted
+deb-src http://ftp.iitm.ac.in/ubuntu/ trusty main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://ftp.iitm.ac.in/ubuntu/ trusty-updates main restricted
+deb-src http://ftp.iitm.ac.in/ubuntu/ trusty-updates main restricted
+
+from - http://www.linux.com/learn/tutorials/772396-how-to-make-a-fancy-and-useful-bash-prompt-in-linux-
+more - http://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/
+     - https://wiki.archlinux.org/index.php/Color_Bash_Prompt
+     - http://www.debian-administration.org/article/205/Fancy_Bash_Prompts
+
+if [ -n "$SSH_CLIENT" ]; then text="ssh-session"
+fi
+export PS1='\[\e[1;32m\]\u@\h:\w${text}$\[\e[m\]]]'
+to change prompt for a different SSH session
+where \u is the username, \h is the hostname
+\d is the date in "weekday month date" format
+\t is the current time, \w is the current working dir, 
+\s is the name of the shell, \n is newline,
+\[ begins a sequence of non-printing characters,
+for embedding a terminal control sequence into the prompt and
+\] ends the sequences.
+
+refer to ANSI color code charts for more but the basic colors are
+0;3(0,7)m - (black, red, green, yellow, blue, purple, cyan, white)
+where 0 stands for normal font, 1 for bold, 4 for underline and 5 for slow blink.
+
+$ echo $PS1 to show the current prompt settings.
+
+for information on linux swap, it's importance, the amount of swap space needed and
+how to set the swappiness.
+refer to - https://help.ubuntu.com/community/SwapFaq
+         - http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space
+
+to load external partitions directly on boot-up, modify /etc/fstab
+$ sudo blkid to determine the mount points, UUIDs and labels for partitions
+refer to - https://help.ubuntu.com/community/UsingUUID
+
+preserving hsitory across multiple bash sessions -
+http://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
